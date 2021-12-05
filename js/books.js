@@ -1,4 +1,4 @@
-export default [
+export default  [
     {
         isbn: "1600506460320",
         title: "Great book",

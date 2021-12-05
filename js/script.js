@@ -1,39 +1,35 @@
-import games from "./books.js";
-
+import books from "./books.js";
 
 const container = document.querySelector("ul");
 
-games.forEach(function (game) {
-    container.innerHTML += `<li> <span> ${game.title} Rating: ${game.isbn} <i class="fa fa-trash" data-item="${game}"></span></li>`;
+container.innerHTML = "";
+
+books.forEach(function (book) {
+    container.innerHTML += `<li><span>${book.title} ${book.isbn}</span> <i class="fa fa-trash" data-item ="${book}"></li>`;
 });
 
-const items = document.querySelectorAll("li span");
 
-items.forEach(function (item) {
-    item.addEventListener("click", handleClick);
-});
+  const trashCans = document.querySelectorAll("li i");
 
-function handleClick() {
-    event.target.classList.toggle("complete");
-}
-
-
-const trashCans = document.querySelectorAll("li i");
-
-    trashCans.forEach(function (can) {
+  trashCans.forEach(function (can) {
         can.addEventListener("click", removeFromList);
     });
 
-    function removeFromList() {
-    
-        const deleteThisItem = event.target.dataset.game;
-    
-        const newList = games.filter(function (game) {
-            if (deleteThisItem !== game) {
+    function removeFromList(event) {
+        console.log(event);
+
+        const deleteItem = event.target.dataset.book;
+
+        const newList = books.filter (function (book) {
+            if (deleteItem !== book) {
                 return true;
             }
         });
     }
+
+
+    
+    
     
 
 
