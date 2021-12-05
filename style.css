@@ -2,3 +2,21 @@
     box-sizing: border-box;
 }
 
+body {
+    text-align: center;
+    margin: 0px auto;
+    background-color: black;
+}
+
+
+.container {
+    color: white;
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.fa-trash, h1 {
+    color:yellow;
+}
+
+

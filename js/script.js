@@ -4,7 +4,7 @@ import games from "./books.js";
 const container = document.querySelector(".container");
 
 games.forEach(function (game) {
-    container.innerHTML += `<li>${game} Rating: ${game} <i class="fa fa-trash" data-item="${game}"></li>`;
+    container.innerHTML += `<li>${game.title} Rating: ${game.isbn} <i class="fa fa-trash" data-item="${game}"></li>`;
 });
 
 const trashCans = document.querySelectorAll("li i");
