@@ -1,13 +1,13 @@
 import games from "./books.js";
 
 
-const container = document.querySelector(".container");
+const container = document.querySelector("ul");
 
 games.forEach(function (game) {
-    container.innerHTML += `<li>${game.title} Rating: ${game.isbn} <i class="fa fa-trash" data-item="${game}"></li>`;
+    container.innerHTML += `<li> <span> ${game.title} Rating: ${game.isbn} <i class="fa fa-trash" data-item="${game}"></span></li>`;
 });
 
-const trashCans = document.querySelectorAll("li i");
+const trashCans = document.querySelectorAll("li span i");
 
     trashCans.forEach(function (can) {
         can.addEventListener("click", removeFromList);
